@@ -5,8 +5,7 @@ There are 2 types of page requests: Requests which doesnt need token validation(
 
 
 Idea: Backend: ** WHen a login AJAX request from the frontend comes, generate an access token and send it back.
-               ** When a logout request comes from the frontend blacklist the refresh token/do nothing if refresh token expired.
-
+               ** When a logout request comes from the frontend blacklist the refresh token/do nothing if refresh token expired.         
       Frontend: **Take the login info and send an AJAX request to the backend.
                 **Handle logout request by sending logout request to backend, destroy access and refresh token stored in client side
 
