@@ -7,11 +7,12 @@ from DjangoRestAuth.serializers import ModSerializer
 
 # an example protected view:
 class ModsView(generics.RetrieveAPIView):
-    queryset = Mods.objects.all()
-    serializer_class = ModSerializer()  # prepare JSON output for the queryset
-    permission_classes = IsAuthenticated
+    permission_classes = (IsAuthenticated,)
 
-    def as_view(self):
+    def get_queryset(self):
+        return Mods.objects.all()
+
+    def get(self, request, *args, **kwargs):
         queryset = self.get_queryset()
         serializer = ModSerializer(queryset, many=True)
         return Response(serializer.data)

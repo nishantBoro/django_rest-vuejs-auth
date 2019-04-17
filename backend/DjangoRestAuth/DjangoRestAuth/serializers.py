@@ -7,4 +7,3 @@ class ModSerializer(serializers.ModelSerializer):
     class Meta:
         model = Mods
         fields = '__all__'
-        read_only_fields = '__all__'
