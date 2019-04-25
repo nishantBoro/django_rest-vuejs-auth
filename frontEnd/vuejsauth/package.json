@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "idle-vue": "^2.0.5",
+    "jwt-decode": "^2.2.0",
     "vue": "^2.6.6",
     "vue-axios": "^2.1.4",
     "vue-cookies": "^1.5.13",
@@ -18,7 +20,7 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.5.0",
     "@vue/cli-plugin-eslint": "^3.5.0",
-    "@vue/cli-service": "^3.5.0",
+    "@vue/cli-service": "^3.6.0",
     "@vue/eslint-config-standard": "^4.0.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.8.0",

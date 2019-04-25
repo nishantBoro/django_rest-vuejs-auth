@@ -2,6 +2,7 @@
   <div class="login-form">
     <NavBar></NavBar>
     <div class="lg">
+      <h2 v-if="wrongCred">Wrong credentials entered!. Please enter your correct details.</h2>
       <form v-on:submit.prevent="loginUser">
         <label for="user">Username</label>
         <input type="text" name="username" id="user" v-model="username">
@@ -23,7 +24,8 @@
     data () {
       return {
         username: '',
-        password: ''
+        password: '',
+        wrongCred: false
       }
     },
     methods: {
@@ -32,9 +34,14 @@
           username: this.username,
           password: this.password
         })
-            .then(response => {
+            .then(() => {
+              this.wrongCred = false
               this.$router.push({ name: 'downloads' })
             })
+          .catch(err => {
+            console.log(err)
+            this.wrongCred = true
+          })
         }
       }
   }

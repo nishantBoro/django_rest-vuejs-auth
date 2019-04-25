@@ -3,17 +3,38 @@
     <NavBar></NavBar>
     <div class="bod">
       <h1>Welcome to Download Hub</h1>
-      <h2>Pick your game:</h2>
+      <h2>Versions available:</h2>
+      <h2 v-for="mod in APIData" :key="mod.id">{{mod.name}}</h2>
+      <h2></h2>
     </div>
   </div>
 </template>
 
 <script>
   import NavBar from '../components/Navbar'
+  import { getAPI } from '../api/axios-base'
+  import { mapState } from 'vuex'
   export default {
     name: 'Downloads',
+    onIdle () { // dispatch logoutUser if no activity detected
+      this.$store.dispatch('logoutUser')
+        .then(response => {
+          this.$router.push('/login')
+        })
+    },
     components: {
       NavBar
+    },
+    computed: mapState(['APIData']),
+    created () {
+        getAPI.get('/mods/', { headers: { Authorization: `Bearer ${this.$store.state.accessToken}` } }) // axiosGetApi -> proof that your access token is still valid
+          .then(response => {
+            console.log('GetAPI successfully got the mods')
+            this.$store.state.APIData = response.data
+          })
+          .catch(err => { // refresh token expired or some other error status
+            console.log(err)
+          })
     }
   }
 </script>

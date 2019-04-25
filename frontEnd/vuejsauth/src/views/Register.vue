@@ -3,7 +3,7 @@
     <NavBar></NavBar>
     <form @submit.prevent="registerUser">
       <label for="Name">Name</label>
-      <input type="text" name="Name" id="Name" v-model="Name">
+      <input type="text" name="Name" id="Name" v-model="name">
       <label for="el">Email</label>
       <input type="email" name="el" id="el" v-model="email">
       <label for="ur">Username</label>
@@ -11,7 +11,7 @@
       <label for="pwr">Password</label>
       <input type="password" name="pwr" id="pwr" v-model="password">
       <label for="pass">Password Confirmation</label>
-      <input type="password" name="pass" id="pass" v-model="passwordConfirmation">
+      <input type="password" name="pass" id="pass" v-model="confirm">
       <button type="submit">Register</button>
     </form>
   </div>
@@ -42,7 +42,7 @@
           password: this.password,
           confirm: this.confirm
         }).then(() => {
-          this.router.push({ name: 'login' })
+          this.$router.push({ name: 'login' })
         })
       }
     }
