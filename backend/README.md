@@ -1,29 +1,31 @@
-# vuejsauth
+# Server Setup instructions
 
-## Project setup
-```
-npm install
-```
+Complete the following steps:
 
-### Compiles and hot-reloads for development
+## Install dependencies
+Run the following commands in command-line(cd to ./)
 ```
-npm run serve
+virtualenv <env-name>
+source <env_name>/bin/activate
+pip install requirements.txt
 ```
+Note:You should install virtualenv before installing the dependencies
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Settings.py
 
-### Run your tests
-```
-npm run test
-```
+Open ./DjangoRestAuth/settings.example.py
+Do the manadatory changes and rename the file as settings.py
 
-### Lints and fixes files
+## Migrate data to your database
+
 ```
-npm run lint
+python manage.py makemigrations
+python manage.py migrate
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Run development server
+
+```
+python manage.py runserver
+
+```
