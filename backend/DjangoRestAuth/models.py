@@ -1,4 +1,8 @@
 from django.db import models
+"""
+Here I have defined an example class 'Mods'. Once the client is authenticated, it can request objects of 'Mods' class
+and display it back on the client side.
+"""
 
 
 class Mods(models.Model):

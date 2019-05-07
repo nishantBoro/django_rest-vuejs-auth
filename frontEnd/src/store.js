@@ -5,9 +5,10 @@ import { axiosBase } from './api/axios-base'
 Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
-     accessToken: localStorage.getItem('access_token') || null,
+     accessToken: localStorage.getItem('access_token') || null, // makes sure the user is logged in even after
+    // refreshing the page
      refreshToken: localStorage.getItem('refresh_token') || null,
-     APIData: ''
+     APIData: '' // received data from the backend API is stored here.
   },
   getters: {
     loggedIn (state) {
@@ -30,6 +31,7 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    // run the below action to get a new access token on expiration
     refreshToken (context) {
       return new Promise((resolve, reject) => {
         axiosBase.post('/api/token/refresh/', {
@@ -44,12 +46,6 @@ export default new Vuex.Store({
             console.log('error in refreshToken Task')
             reject(err) // error generating new access and refresh token because refresh token has expired
           })
-      })
-    },
-    // dispatch this when you need to get something from the backend API
-    getAccess (context) {
-      return new Promise((resolve, reject) => {
-
       })
     },
     registerUser (context, data) {
@@ -89,10 +85,12 @@ export default new Vuex.Store({
     },
     loginUser (context, credentials) {
       return new Promise((resolve, reject) => {
+        // send the username and password to the backend API:
         axiosBase.post('/api/token/', {
           username: credentials.username,
           password: credentials.password
         })
+        //if successful update local storage:
           .then(response => {
             context.commit('updateLocalStorage', { access: response.data.access, refresh: response.data.refresh }) // store the access and refresh token in localstorage
             resolve()

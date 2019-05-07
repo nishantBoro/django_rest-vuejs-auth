@@ -25,11 +25,11 @@
       return {
         username: '',
         password: '',
-        wrongCred: false
+        wrongCred: false // activates appropriate message if set to true
       }
     },
     methods: {
-      loginUser () {
+      loginUser () { // call loginUSer action
         this.$store.dispatch('loginUser', {
           username: this.username,
           password: this.password
@@ -40,7 +40,7 @@
             })
           .catch(err => {
             console.log(err)
-            this.wrongCred = true
+            this.wrongCred = true // if the credentials were wrong set wrongCred to true
           })
         }
       }
