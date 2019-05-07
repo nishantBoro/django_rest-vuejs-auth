@@ -1,7 +1,7 @@
 # Server Setup instructions
 
-Complete the following steps:
 Note: Make sure your cmd is running on this path before typing any of the commands below.
+Complete the following steps:
 
 ## Install dependencies:
 Run the following commands in command-line:
