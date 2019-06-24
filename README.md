@@ -8,9 +8,12 @@
  - Logout is initialized by informing the backend to blacklist the access token(prevents possible misuse if the token is stolen), the access and refresh tokens are destroyed at the client side.
  
 **The Vuex store state defines 'APIData' to save the received data from the backendAPI.
+**Go through the code to get a better insight of the flow.
 
 ## Features: 
 
  - Autologout if no activity(using vue-idle)
  - Automatically refresh access token on expiration(using axios interceptors)
  - CORS in backend
+
+## Installation instructions are given seperately for django and vuejs inside 'backend' and 'frontend' directories.
