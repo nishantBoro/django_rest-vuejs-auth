@@ -90,7 +90,7 @@ export default new Vuex.Store({
           username: credentials.username,
           password: credentials.password
         })
-        //if successful update local storage:
+        // if successful update local storage:
           .then(response => {
             context.commit('updateLocalStorage', { access: response.data.access, refresh: response.data.refresh }) // store the access and refresh token in localstorage
             resolve()
