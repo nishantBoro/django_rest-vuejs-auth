@@ -57,3 +57,6 @@ Mods.objects.create(name='put_something_here', version='put_something_here')
 python manage.py runserver
 
 ```
+## To-Do / Follow up
+
+I'm yet to implement registration at the backend. You can try that on your own.
