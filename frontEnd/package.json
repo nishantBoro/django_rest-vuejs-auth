@@ -11,21 +11,21 @@
     "axios": "^0.21.1",
     "idle-vue": "^2.0.5",
     "jwt-decode": "^2.2.0",
-    "vue": "^2.6.10",
+    "vue": "^2.6.12",
     "vue-axios": "^2.1.4",
-    "vue-cookies": "^1.5.13",
-    "vue-router": "^3.0.6",
-    "vuex": "^3.1.1"
+    "vue-cookies": "^1.7.4",
+    "vue-router": "^3.5.1",
+    "vuex": "^3.6.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.8.0",
     "@vue/cli-plugin-eslint": "^3.8.0",
-    "@vue/cli-service": "^3.8.4",
+    "@vue/cli-service": "^4.5.11",
     "@vue/eslint-config-standard": "^4.0.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.2.2",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.12"
   },
   "eslintConfig": {
     "root": true,
