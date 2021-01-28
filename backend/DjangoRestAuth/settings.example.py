@@ -33,12 +33,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
-    'rest_framework_simplejwt.token_blacklist'
+    'rest_framework_simplejwt.token_blacklist',
+    'DjangoRestAuth'
 ]
 
 # added corsheaders middleware below
 MIDDLEWARE = [
-
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
@@ -51,9 +51,9 @@ MIDDLEWARE = [
 
 # **Dont forget to add your client's address to the CORS whitelist. This will make sure the server accepts request from
 # the specified source only
-CORS_ORIGIN_WHITELIST = (
-    'localhost:8081'
-)
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:8080'
+]
 
 # allow all requests containing any of the default headers(as in django docs) or content-type header
 CORS_ALLOW_HEADERS = default_headers + (
@@ -88,9 +88,9 @@ WSGI_APPLICATION = 'DjangoRestAuth.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'yourdbnamehere',
-        'USER': 'usernamehere',
-        'PASSWORD': 'yourpasswordhere',
+        'NAME': '',
+        'USER': '',
+        'PASSWORD': '',
         'HOST': '',
         'PORT': ''
     }
