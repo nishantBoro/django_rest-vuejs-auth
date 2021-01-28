@@ -1,16 +1,23 @@
+Update(28th Jan, 2021): Updated to work with python3 and implemented registration api
+
 # Server Setup instructions
 
 Note: Make sure your cmd is running on this path before typing any of the commands below.
 Complete the following steps:
 
+## Update/Install python3, pip, virtualenv to latest version
+
 ## Install dependencies:
+
 Run the following commands in command-line:
 ```
-virtualenv <env-name>
+virtualenv -p python3 <env-name>
 source <env_name>/bin/activate
 pip install requirements.txt
 ```
-Note:You should install virtualenv before installing the dependencies
+Note: Tested in virtualenv with following configuration(as on 28th Jan, 2021):
+      Python version: 3.6.9,
+      pip version: 21.0 
 
 ## Settings.py:
 
@@ -57,6 +64,3 @@ Mods.objects.create(name='put_something_here', version='put_something_here')
 python manage.py runserver
 
 ```
-## To-Do / Follow up
-
-I'm yet to implement registration at the backend. You can try that on your own.
