@@ -6,6 +6,6 @@ djangorestframework==3.12.2
 djangorestframework-simplejwt==4.4.0
 mysqlclient==2.0.3
 pkg-resources==0.0.0
-PyJWT==1.7.1
+PyJWT==2.4.0
 pytz==2020.5
 sqlparse==0.4.1
